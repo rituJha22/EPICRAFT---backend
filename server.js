@@ -8,7 +8,6 @@ const Orders = require("./Orders");
 const dotenv = require("dotenv").config();
 
 const stripe = require("stripe")(
-  // "sk_test_51MRAqmSAAchZSQiNeopsb1xFI4MbtHa5utTIyiQBwyFfhKRNkNzmi9hkyUXdClulpwKaP64xDPFOvNV8R0UIZ45i00Ca9A1OMf"
   process.env.KEY
 );
 
@@ -24,11 +23,10 @@ app.use(cors());
 
 // connection url
 
-const connection_url =
-  // "mongodb+srv://project123:project123@cluster0.bedevss.mongodb.net/Cluster0?retryWrites=true&w=majority";
-  process.env.DATABASE;
+// const connection_url = process.env.DATABASE;
+mongoose.set("strictQuery", false);
 
-mongoose.connect(connection_url, {
+mongoose.connect(process.env.DATABASE, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
