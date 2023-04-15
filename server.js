@@ -7,7 +7,8 @@ const Users = require("./Users");
 const Orders = require("./Orders");
 
 const stripe = require("stripe")(
-  process.env.KEY
+  // process.env.KEY
+  sk_test_51MRAqmSAAchZSQiNeopsb1xFI4MbtHa5utTIyiQBwyFfhKRNkNzmi9hkyUXdClulpwKaP64xDPFOvNV8R0UIZ45i00Ca9A1OMf
 );
 
 const app = express();
