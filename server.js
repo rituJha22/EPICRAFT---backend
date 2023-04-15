@@ -5,7 +5,6 @@ const bcrypt = require("bcryptjs");
 const Products = require("./Products");
 const Users = require("./Users");
 const Orders = require("./Orders");
-const dotenv = require("dotenv").config();
 
 const stripe = require("stripe")(
   process.env.KEY
@@ -23,10 +22,11 @@ app.use(cors());
 
 // connection url
 
-// const connection_url = process.env.DATABASE;
-mongoose.set("strictQuery", false);
+const connection_url = "mongodb+srv://project123:project123@cluster0.bedevss.mongodb.net/Cluster0?retryWrites=true&w=majority"
+process.env.DATABASE;
+// mongoose.set("strictQuery", false);
 
-mongoose.connect(process.env.DATABASE, {
+mongoose.connect(connection_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
