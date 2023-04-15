@@ -7,8 +7,8 @@ const Users = require("./Users");
 const Orders = require("./Orders");
 
 const stripe = require("stripe")(
+  "sk_test_51MRAqmSAAchZSQiNeopsb1xFI4MbtHa5utTIyiQBwyFfhKRNkNzmi9hkyUXdClulpwKaP64xDPFOvNV8R0UIZ45i00Ca9A1OMf"
   // process.env.KEY
-  sk_test_51MRAqmSAAchZSQiNeopsb1xFI4MbtHa5utTIyiQBwyFfhKRNkNzmi9hkyUXdClulpwKaP64xDPFOvNV8R0UIZ45i00Ca9A1OMf
 );
 
 const app = express();
@@ -24,7 +24,7 @@ app.use(cors());
 // connection url
 
 const connection_url = "mongodb+srv://project123:project123@cluster0.bedevss.mongodb.net/Cluster0?retryWrites=true&w=majority"
-process.env.DATABASE;
+// process.env.DATABASE;
 // mongoose.set("strictQuery", false);
 
 mongoose.connect(connection_url, {
